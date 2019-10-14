@@ -1,4 +1,4 @@
-FROM ubuntu:18.04 as builder
+FROM ubuntu:18.04 
 
 LABEL maintainer="vo1@sanger.ac.uk" \
       version="0.0.1" \
@@ -7,6 +7,11 @@ LABEL maintainer="vo1@sanger.ac.uk" \
 MAINTAINER  Victoria Offord <vo1@sanger.ac.uk>
 
 USER root
+
+# Locale
+ENV LC_ALL C
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
 
 # ALL tool versions used by opt-build.sh
 ENV VER_BCL2FASTQ="2-20-0"
@@ -53,4 +58,8 @@ RUN bash build/opt-build.sh $OPT
 RUN chmod a+rx $OPT/bin
 
 USER ubuntu
+
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
+
 WORKDIR /home/ubuntu
