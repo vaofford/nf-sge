@@ -94,7 +94,7 @@ fi
 # SeqKit
 if [ ! -e $SETUP_DIR/SeqKit.success ]; then
   curl -sSL --retry 10 -o distro.tar.gz https://github.com/shenwei356/seqkit/releases/download/v${VER_SEQKIT}/seqkit_linux_amd64.tar.gz
-  tar --strip-components 1 -C distro -xzf distro.tar.gz  
+  tar -C distro -xzf distro.tar.gz  
   cd distro
   mv seqkit $INST_PATH/bin/seqkit
   cd $SETUP_DIR
