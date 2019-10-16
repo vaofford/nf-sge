@@ -80,7 +80,7 @@ fi
 
 # EMBOSS
 if [ ! -e $SETUP_DIR/EMBOSS.success ]; then
-  curl -sSL --retry 10 -o distro.tar.gz ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-${VER_EMBOSS}.tar.gz
+  curl -vsSL --retry 10 -o distro.tar.gz ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-${VER_EMBOSS}.tar.gz
   tar --strip-components 1 -C distro -xzf distro.tar.gz
   cd distro
   ./configure --prefix=$INST_PATH
