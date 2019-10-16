@@ -62,7 +62,14 @@ fi
 
 # MultiQC
 if [ ! -e $SETUP_DIR/MultiQC.success ]; then
-  pip3 install multiqc
+  pip3 install multiqc==${VER_MULTIQC}
+  touch $SETUP_DIR/MultiQC.success
+fi
+
+# cutadapt
+if [ ! -e $SETUP_DIR/cutadapt.success ]; then
+  pip3 install cutadapt==${VER_CUTADAPT}
+  touch $SETUP_DIR/cutadapt.success
 fi
 
 # SeqPrep
