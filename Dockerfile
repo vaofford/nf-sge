@@ -1,7 +1,7 @@
 FROM ubuntu:18.04 
 
 LABEL maintainer="vo1@sanger.ac.uk" \
-      version="0.0.1" \
+      version="0.0.5" \
       description="nf-sge container"
 
 MAINTAINER  Victoria Offord <vo1@sanger.ac.uk>
