@@ -43,6 +43,13 @@ libx11-dev
 
 RUN apt-get -yq update
 
+RUN curl -L http://cpanmin.us | perl - App::cpanminus
+RUN cpanm Data::Dumper
+RUN cpanm Getopt::Long
+RUN cpanm File::Basename
+RUN cpanm -fn XML::DOM::XPath
+RUN cpanm -fn Bio::SeqIO
+
 ENV OPT /opt/wsi-t113
 ENV PATH $OPT/bin:$OPT/FastQC:$PATH
 ENV LD_LIBRARY_PATH $OPT/lib
